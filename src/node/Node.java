@@ -25,9 +25,6 @@ public class Node {
     /** Positional data */
     private int i,j,width,height;
 
-    // Color to draw, initially white
-    private int[] color = {255,255,255};
-
 
     public Node(int i, int j, int width, int height) {
         this.i = i;
@@ -36,15 +33,11 @@ public class Node {
         this.height = height;
     }
 
-    public void setColor(int[] newColor) {
-        this.color = newColor;
-    }
-
-    public void draw() {
+    public void draw(int[] color) {
         sketch.pushMatrix();
         sketch.translate(this.i*this.width, this.j*this.height);
         sketch.stroke(0);
-        sketch.fill(this.color[0],this.color[1],this.color[2]);
+        sketch.fill(color[0],color[1],color[2]);
         if (this.isWall) sketch.fill(0);
         sketch.rect(0, 0, this.width, this.height);
         if (main.Main.DEBUG) {
