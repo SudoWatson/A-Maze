@@ -1,8 +1,5 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import aStar.AStarAlgo;
 import node.Node;
 import processing.core.*;
@@ -26,8 +23,8 @@ public class Main extends PApplet{
     private static AStarAlgo aStar;
 
 
-    private static int nodeWidth = WIDTH/rows;
-    private static int nodeHeight = HEIGHT/cols;
+    public static int nodeWidth = WIDTH/rows;
+    public static int nodeHeight = HEIGHT/cols;
 
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -40,7 +37,7 @@ public class Main extends PApplet{
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 grid[i][j] = new Node(i, j, nodeWidth, nodeHeight);
-                if (sketch.random(1) < 0.45) grid[i][j].isWall = true;
+                if (sketch.random(1) < 0.5) grid[i][j].isWall = true;
             }
         }
 
